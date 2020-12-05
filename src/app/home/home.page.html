@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Bienvenido
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Pia ApMov</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed" style="display: inline" id="fabBtn">
+    <ion-fab-button (click)="addRow()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+  <div id="container">
+    <!--La primera vez que cargue la página se usará la ip del usuario para establecer el clima y tiempo-->
+    <ion-grid>
+      <ion-row *ngFor="let element of array">
+        <ion-col size-lg="4" size-md="4" size-sm="12" size-xs="12">
+          <app-weather-widget></app-weather-widget>
+        </ion-col>
+        <ion-col size-lg="2" size-md="2" offset-md="1" offset-lg="1" size-sm="12" size-xs="12">
+          <app-calculator-widget></app-calculator-widget>
+        </ion-col>
+        <ion-col size-lg="4" size-md="4" offset-md="1" offset-lg="1" size-sm="12" size-xs="12">
+          <app-time-widget></app-time-widget>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+</ion-content>
